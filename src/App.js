@@ -2,6 +2,20 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+class addButton extends React.Component {
+  render() {
+    return (
+      <button className="add" onClick={() => addNote()}>
+        {"Add Note"}
+      </button>
+    )
+  }
+}
+
+function addNote() {
+  
+}
+
 function App() {
   return (
     /*
