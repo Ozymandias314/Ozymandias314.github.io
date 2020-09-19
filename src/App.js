@@ -24,7 +24,7 @@ function App() {
     */
 
     <h1>
-      hello world! suckers!
+      hello world!
     </h1>
   
   );
