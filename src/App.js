@@ -1,40 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button } from '@material-ui/core';
-import  { Component } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from'react-dom';
+import NodeComponentReal from './components/NodeComponentReal'
 
-function addNote() {
-  alert('your stupid');
-}
 
-function App() {
+class App extends React.Component {
+
+  constructor(){
+    super();
+    this.state = {numNodes: 0}
+  }
+
+  addNote() {
+    this.setState({numNodes: this.state.numNodes + 1});
+    return (
+    <NodeComponentReal></NodeComponentReal>
+    );
+  }
+
+  render(){
+    const elements = ['one', 'two', 'three'];
   return (
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
+    <div id='main'>
+      {this.state.numNodes}
    <Button variant='contained'
-   onClick={() => addNote()}>
+   onClick={() => this.addNote()}>
      Add Note
       </Button>
+      {elements.map((value, index) => {
+        <NodeComponentReal>
+        </NodeComponentReal>
+      })}
+     
+      
+    </div>
+     
   
   );
+  }
 }
 
 export default App;
