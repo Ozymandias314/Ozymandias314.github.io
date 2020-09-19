@@ -6,7 +6,7 @@ import { Button } from '@material-ui/core';
 class addButton extends React.Component {
   render() {
     return (
-      <button className="add" onClick={() => addNote()}>
+      <button className="add" onClick={() => alert("your stupid")}>
         {"Add Note"}
       </button>
     )
