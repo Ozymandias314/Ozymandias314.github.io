@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from '@material-ui/core';
 
 class addButton extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class addButton extends React.Component {
 }
 
 function addNote() {
-  
+
 }
 
 function App() {
