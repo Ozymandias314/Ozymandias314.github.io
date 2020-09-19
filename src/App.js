@@ -2,19 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button } from '@material-ui/core';
-
-class addButton extends React.Component {
-  render() {
-    return (
-      <button className="add" onClick={() => alert("your stupid")}>
-        {"Add Note"}
-      </button>
-    )
-  }
-}
+import  { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 function addNote() {
-
+  alert('your stupid');
 }
 
 function App() {
@@ -37,10 +29,10 @@ function App() {
       </header>
     </div>
     */
-
-    <h1>
-      hello world!
-    </h1>
+   <Button variant='contained'
+   onClick={() => addNote()}>
+     Add Note
+      </Button>
   
   );
 }
