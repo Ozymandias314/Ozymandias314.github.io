@@ -10,8 +10,6 @@ export default class NodeComponentReal extends React.Component {
    constructor(){
       super();
       const [open, setOpen] = React.useState(false);
-      const contentsOfNote = ""; 
-      let isOpen = false;
       let num = 0;
       const [contentsOfNote, setContentsOfNote] = React.useState("Tell us more!");
       const [isOpen, setIsOpen] = React.useState(false);
@@ -33,10 +31,10 @@ export default class NodeComponentReal extends React.Component {
         </Button>
         
             <NodeComponent></NodeComponent>
-            <Collapse isOpen={true}>
+            <Collapse isOpen={isOpen}>
               <Card>
               <CardBody>
-                <input defaultValue = {"Hello World!"} class = "notes" />
+                <input defaultValue = {contentsOfNotes} class = "notes" />
               </CardBody>
               </Card>
         </Collapse>
