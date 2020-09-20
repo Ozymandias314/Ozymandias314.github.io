@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import { Button } from '@material-ui/core';
 import ReactDOM from 'react-dom';
-import {NodeComponentReal} from './components/NodeComponentReal';
-//import LineTo from 'react-lineto';
+import NodeComponentReal from './components/NodeComponentReal'
 
 
 class App extends React.Component {
@@ -16,7 +15,7 @@ class App extends React.Component {
     buttonVisibility: false,};
   }
 
-  enterPressed(event) { // TODO: Fix the enterPressed function so that the main screen disappears and reveals the notes screen
+  enterPressed(event) { 
    /* var code = event.keyCode || event.which;
     if(code === 13) { 
       console.log("hello");
@@ -36,8 +35,8 @@ class App extends React.Component {
     this.setState({elmts: copy});
   }
 
-  addLine() {
-    
+  addLink() {
+    // TODO: ADD THE LINK
   }
 
   
@@ -59,7 +58,7 @@ class App extends React.Component {
           return (<NodeComponentReal >
           </NodeComponentReal>);
         })}
-      </div>
+       </div>
     );}
     else { 
   return( <>  

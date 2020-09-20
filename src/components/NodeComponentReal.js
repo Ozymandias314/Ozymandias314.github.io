@@ -5,22 +5,22 @@ import Button from '@material-ui/core/Button';
 import LinkIcon from '@material-ui/icons/Link';
 import Draggable from 'react-draggable';
 import PanToolIcon from '@material-ui/icons/PanTool';
-import { TrainRounded } from '@material-ui/icons';
+import { ContactsOutlined, TrainRounded } from '@material-ui/icons';
 
 export default class NodeComponentReal extends React.Component {
    constructor(){
       super();
-      this.state = {
-        initialValue: null;
-      }
     }
 
+    handleCheck(e) {
+        console.log(e.target());
+    }
     
 
     render(){
         return(
             <Draggable>
-        <Button id = {0}>
+        <Button>
         <Button variant = "outlined" color="primary">
         <PanToolIcon />
         </Button>
