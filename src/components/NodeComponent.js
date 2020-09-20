@@ -37,20 +37,22 @@ export default function NodeComponent() {
     }
   
     return (
+    <>
       <div>
-        <Button variant="outlined" color="primary" >
-        {titleOfNote}
-          
+        <Button variant="outlined" color="primary">
+        {titleOfNote}          
         </Button>
        
         <Button variant="outlined" color="primary" onClick={handleClickOpen}>
           
         <CreateIcon></CreateIcon>
-          
-
+        
         </Button>
         
-        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+      </div>
+        <div class = "overlay">
+        <div class = "modal">
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" autoFocus >
           <DialogTitle id="form-dialog-title">Title:</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -64,6 +66,7 @@ export default function NodeComponent() {
               type="String"
               fullWidth
               onChange = {getData}
+              defaultValue = {titleOfNote}
             />
           </DialogContent>
           <DialogActions>
@@ -75,7 +78,8 @@ export default function NodeComponent() {
             </Button>
           </DialogActions>
         </Dialog>
-        
+        </div>
       </div>
+      </>
     );
   }
