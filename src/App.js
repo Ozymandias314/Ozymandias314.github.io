@@ -11,7 +11,15 @@ class App extends React.Component {
     super();
     this.state = {numNodes: 0,
     elmts: [], 
-    elmts2: []}
+    elmts2: [],
+    buttonVisibility: true,} // TODO: Change the value of buttonVisibility to true 
+  }
+
+  enterPressed(event) { // TODO: Fix the enterPressed function so that the main screen disappears and reveals the notes screen
+    var code = event.keyCode || event.which;
+    if(code === 13) { 
+      this.setState = {buttonVisibility: true,};
+    } 
   }
 
   addNote() {
@@ -19,34 +27,51 @@ class App extends React.Component {
     var copy = this.state.elmts.slice()
     copy.push("1")
     this.setState({elmts: copy});
-    
   }
-
-
-
-  render(){
-    
-  return (
-    <div id='main'>
-      {this.state.numNodes}
-   <Button variant='contained'
-   onClick={() => this.addNote()}>
-     Add Note
-      </Button>
-    <Button variant ='contained' onClick={() => this.addLink()}>
-      Add Link 
-    </Button>
-      {this.state.elmts.map((value, index) => {
-        return (<NodeComponentReal >
-        </NodeComponentReal>);
-      })}
-      
-      
-      
-    </div>
-     
   
-  );
+  render(){
+    if(this.state.buttonVisibility){
+    return (
+      <div id='main'>
+        {this.state.numNodes}
+    <Button variant='contained' type = "button" class="btn btn-light btn-lg"
+    onClick={() => this.addNote()}>
+      Add Note
+        </Button>
+      <Button type = "button" class="btn btn-light btn-lg" variant ='contained' onClick={() => this.addLink()}>
+        Add Link 
+      </Button>
+        {this.state.elmts.map((value, index) => {
+          return (<NodeComponentReal >
+          </NodeComponentReal>);
+        })}
+      </div>
+    );}
+    else { 
+  return( <>  
+      <div class = "row">
+
+        <div class = "col-2"></div>
+
+        <div class = "col-8">
+        
+          <h1 class = "display-1" text-align="center"> Clean notetaking.<br /> With everything you love. <br />
+            Start Typing Below.
+          </h1>
+
+          <div> &nbsp;  </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type in your notes here!" aria-label="Type in your notes here!" onKeyPress={this.enterPressed.bind(this)} aria-describedby="basic-addon2" /> 
+            <div class="input-group-append"> </div>
+          </div>
+        </div>
+
+        
+        <div class = "col-2"></div>
+      </div>
+    </>);
+    }
   }
 }
 
