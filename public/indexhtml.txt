@@ -35,5 +35,32 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class = "container" height = "20%">&nbsp; &nbsp;</div>
+    <div id="root" class = "container-fluid"> 
+
+      <div class = "row">
+
+        <div class = "col-2"></div> <!--Spacing-->
+
+        <div class = "col-8">
+        
+          <h1 class = "display-1" style="text-align: center;">
+            Clean notetaking.<br> With everything you love. <br>
+            Start Typing Below.
+          </h1>
+
+          <div> &nbsp;  <div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type in your notes here!" aria-label="Type in your notes here!"
+            aria-describedby="basic-addon2">
+            <div class="input-group-append">
+            </div>
+          </div>
+        </div>
+
+        <div class = "col-2"></div> <!--Spacing-->
+      </div>
+    </div>
   </body>
 </html>

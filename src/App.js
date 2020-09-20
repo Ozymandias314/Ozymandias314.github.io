@@ -3,7 +3,6 @@ import './App.css';
 import { Button } from '@material-ui/core';
 import ReactDOM from'react-dom';
 import NodeComponentReal from './components/NodeComponentReal'
-import LinkComponent from './components/LinkComponent'
 
 
 class App extends React.Component {
@@ -23,12 +22,7 @@ class App extends React.Component {
     
   }
 
-  addLink(){
-    this.setState({numNodes: this.state.numNodes + 1});
-    var copy = this.state.elmts2.slice()
-    copy.push("1")
-    this.setState({elmts2: copy});
-  }
+
 
   render(){
     
@@ -46,11 +40,8 @@ class App extends React.Component {
         return (<NodeComponentReal >
         </NodeComponentReal>);
       })}
-      {this.state.elmts2.map((value, index) => {
-        return (<LinkComponent >
-        </LinkComponent>);
-      })}
-     
+      
+      
       
     </div>
      
