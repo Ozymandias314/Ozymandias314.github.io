@@ -11,7 +11,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CreateIcon from '@material-ui/icons/Create';
-import Draggable from 'react-draggable'; //I imported it right on top
+import Draggable from 'react-draggable';
 
 
 export default function NodeComponent() {
