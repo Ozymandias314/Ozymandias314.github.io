@@ -38,23 +38,18 @@ export default function NodeComponent() {
   
     return (
       <div>
-        <Draggable>
-        <Button>
-        <Button variant = "outlined" color="primary">
-        <LinkIcon></LinkIcon>
-        </Button>
         <Button variant="outlined" color="primary" >
         {titleOfNote}
           
         </Button>
+       
         <Button variant="outlined" color="primary" onClick={handleClickOpen}>
           
         <CreateIcon></CreateIcon>
           
 
         </Button>
-        </Button>
-        </Draggable>
+        
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
           <DialogTitle id="form-dialog-title">Title:</DialogTitle>
           <DialogContent>

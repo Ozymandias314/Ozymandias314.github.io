@@ -9,14 +9,16 @@ class App extends React.Component {
 
   constructor(){
     super();
-    this.state = {numNodes: 0}
+    this.state = {numNodes: 0,
+    elmts: []}
   }
 
   addNote() {
     this.setState({numNodes: this.state.numNodes + 1});
-    return (
-    <NodeComponentReal></NodeComponentReal>
-    );
+    var copy = this.state.elmts.slice()
+    copy.push("1")
+    this.setState({elmts: copy});
+    
   }
 
   render(){
@@ -28,9 +30,9 @@ class App extends React.Component {
    onClick={() => this.addNote()}>
      Add Note
       </Button>
-      {elements.map((value, index) => {
-        <NodeComponentReal>
-        </NodeComponentReal>
+      {this.state.elmts.map((value, index) => {
+        return (<NodeComponentReal >
+        </NodeComponentReal>);
       })}
      
       
