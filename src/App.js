@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Button } from '@material-ui/core';
-import ReactDOM from'react-dom';
+import ReactDOM from 'react-dom';
 import NodeComponentReal from './components/NodeComponentReal'
+import LineTo from 'react-lineto';
 
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ class App extends React.Component {
     this.state = {numNodes: 0,
     elmts: [], 
     elmts2: [],
-    buttonVisibility: true,} // TODO: Change the value of buttonVisibility to true 
+    buttonVisibility: true,} // TODO: Change the value of buttonVisibility to false 
   }
 
   enterPressed(event) { // TODO: Fix the enterPressed function so that the main screen disappears and reveals the notes screen
@@ -27,6 +28,10 @@ class App extends React.Component {
     var copy = this.state.elmts.slice()
     copy.push("1")
     this.setState({elmts: copy});
+  }
+
+  addLine() {
+    
   }
   
   render(){

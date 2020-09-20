@@ -7,14 +7,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CreateIcon from '@material-ui/icons/Create';
-import LinkIcon from '@material-ui/icons/Link';
-
 import Draggable from 'react-draggable';
 
 export default function NodeComponent() {
     const [open, setOpen] = React.useState(false);
-
-
+   
     const [titleOfNote, setTitleOfNote]= React.useState('Your Title');
 
     const [hiddenName, setHiddenName]=React.useState('');
@@ -35,20 +32,21 @@ export default function NodeComponent() {
     const getData=(e)=>{
       setHiddenName(e.target.value);
     }
+
   
     return (
     <>
       <div>
-        <Button variant="outlined" color="primary">
+      
+      <Button class = "note-title">
+      <Button variant="outlined" color="primary">
         {titleOfNote}          
         </Button>
-       
         <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-          
-        <CreateIcon></CreateIcon>
-        
-        </Button>
-        
+          <CreateIcon></CreateIcon>
+        </Button></Button>
+      
+
       </div>
         <div class = "overlay">
         <div class = "modal">

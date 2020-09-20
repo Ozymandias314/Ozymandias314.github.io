@@ -11,11 +11,14 @@
     "framework-utils": "^0.3.4",
     "material-ui": "^0.20.2",
     "react": "^16.13.1",
+    "react-collapsible": "^2.8.0",
     "react-dom": "^16.13.1",
     "react-draggable": "^4.4.3",
     "react-hot-keys": "^2.6.0",
+    "react-lineto": "^3.2.0",
     "react-moveable": "^0.22.6",
     "react-scripts": "^3.4.3",
+    "reactstrap": "^8.6.0",
     "scenejs": "^1.4.1"
   },
   "scripts": {
