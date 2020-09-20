@@ -71,6 +71,7 @@ class App extends React.Component {
           </NodeComponentReal>);
         })}
       </div>
+      </div>
     );}
     else { 
   return( <>  

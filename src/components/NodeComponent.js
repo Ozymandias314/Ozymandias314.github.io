@@ -45,30 +45,7 @@ export default function NodeComponent() {
     }
 
   
-    return (
-    <>
-      <div>
-      
-      <Button class = "note-title">
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        {titleOfNote}          
-        </Button>
-        <Button variant="outlined" color="primary" onClick={handleCardOpen}>
-          <CreateIcon></CreateIcon>
-        </Button>
-        </Button>
-        
-        <Card>
-        <Collapse in={isOpen}>
-              
-              <CardContent>
-                {noteContent}
-              </CardContent>
-              
-        </Collapse>
-        </Card>
-    return (
-    <>
+    return (<>
       <div>
       
       <Button class = "note-title">
