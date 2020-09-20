@@ -3,7 +3,7 @@ import './App.css';
 import { Button } from '@material-ui/core';
 import ReactDOM from 'react-dom';
 import NodeComponentReal from './components/NodeComponentReal'
-import LineTo from 'react-lineto';
+//import LineTo from 'react-lineto';
 
 
 class App extends React.Component {

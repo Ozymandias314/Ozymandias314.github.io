@@ -1,4 +1,8 @@
 import React from 'react';
+//import { Collapse, CardBody, Card } from 'reactstrap';
+import Collapse from '@material-ui/core/Collapse';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -7,17 +11,24 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import CreateIcon from '@material-ui/icons/Create';
-import Draggable from 'react-draggable';
+import Draggable from 'react-draggable'; //I imported it right on top
+
 
 export default function NodeComponent() {
     const [open, setOpen] = React.useState(false);
    
-    const [titleOfNote, setTitleOfNote]= React.useState('Your Title');
-
+    const [titleOfNote, setTitleOfNote]= React.useState('Edit Your Title');
+    const [noteContent, setNoteContent]= React.useState('Your Content');
     const [hiddenName, setHiddenName]=React.useState('');
-  
+    let num = 0;
+    //const [contentsOfNote, setContentsOfNote] = React.useState('Tell us more!');
+    const [isOpen, setIsOpen] = React.useState(false);
     const handleClickOpen = () => {
       setOpen(true);
+    };
+
+    const handleCardOpen = () => {
+      setIsOpen(!isOpen);
     };
   
     const handleClose = () => {
@@ -39,12 +50,23 @@ export default function NodeComponent() {
       <div>
       
       <Button class = "note-title">
-      <Button variant="outlined" color="primary">
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         {titleOfNote}          
         </Button>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        <Button variant="outlined" color="primary" onClick={handleCardOpen}>
           <CreateIcon></CreateIcon>
-        </Button></Button>
+        </Button>
+        </Button>
+        
+        <Card>
+        <Collapse in={isOpen}>
+              
+              <CardContent>
+                {noteContent}
+              </CardContent>
+              
+        </Collapse>
+        </Card>
       
 
       </div>
