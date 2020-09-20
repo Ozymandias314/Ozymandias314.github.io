@@ -7,19 +7,19 @@ import Draggable from 'react-draggable';
 import { TrainRounded } from '@material-ui/icons';
 
 export default class NodeComponentReal extends React.Component {
-   //constructor(){
-        // super();
-        //this.state = {index: '',};
-    //}
-    //const [open, setOpen] = React.useState(false);
-    //const contentsOfNote = ""; 
-    //let isOpen = false;
-    //let num = 0;
-    //const [contentsOfNote, setContentsOfNote] = React.useState("Tell us more!");
-    //const [isOpen, setIsOpen] = React.useState(false);
-    //const showContents = () => {
-      //setIsOpen(!isOpen);
-    //}
+   constructor(){
+      super();
+      const [open, setOpen] = React.useState(false);
+      const contentsOfNote = ""; 
+      let isOpen = false;
+      let num = 0;
+      const [contentsOfNote, setContentsOfNote] = React.useState("Tell us more!");
+      const [isOpen, setIsOpen] = React.useState(false);
+    }
+
+    showContents = () => {
+      setIsOpen(!isOpen);
+    }
 
     render(){
         return(
