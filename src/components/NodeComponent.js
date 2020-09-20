@@ -29,6 +29,9 @@ export default function NodeComponent() {
 
     const handleCardOpen = () => {
       setIsOpen(!isOpen);
+      return(
+       <input type="text" class="form-control"/>
+      );
     };
   
     const handleClose = () => {
@@ -38,11 +41,16 @@ export default function NodeComponent() {
     const handleCloseSubmit = () =>{
         setOpen(false);
         setTitleOfNote(hiddenName);
-    }
+    };
 
     const getData=(e)=>{
       setHiddenName(e.target.value);
-    }
+    };
+
+     const handleContentClose = () =>{
+        setIsOpen(false);
+        setNoteContent(hiddenName);
+    };
 
   
     return (<>
@@ -61,7 +69,9 @@ export default function NodeComponent() {
         <Collapse in={isOpen}>
               
               <CardContent>
+              <Button onClick={handleContentClose}>
                 {noteContent}
+                </Button>
               </CardContent>
               
         </Collapse>
