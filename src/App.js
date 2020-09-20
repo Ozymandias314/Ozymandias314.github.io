@@ -13,15 +13,24 @@ class App extends React.Component {
     this.state = {numNodes: 0,
     elmts: [], 
     elmts2: [],
-    buttonVisibility: true,} // TODO: Change the value of buttonVisibility to false 
+    buttonVisibility: false,} // TODO: Change the value of buttonVisibility to false 
   }
 
   enterPressed(event) { // TODO: Fix the enterPressed function so that the main screen disappears and reveals the notes screen
-    var code = event.keyCode || event.which;
+   /* var code = event.keyCode || event.which;
     if(code === 13) { 
+      console.log("hello");
       this.setState = {buttonVisibility: true,};
-    } 
+    } */
+    if(event.key === 'Enter'){
+      console.log('enter press here! ');
+      this.setState ({buttonVisibility: true});
+    }
   }
+
+  
+
+  
 
   addNote() {
     this.setState({numNodes: this.state.numNodes + 1});
@@ -46,6 +55,17 @@ class App extends React.Component {
       <Button type = "button" class="btn btn-light btn-lg" variant ='contained' onClick={() => this.addLink()}>
         Add Link 
       </Button>
+      <NodeComponentReal></NodeComponentReal>
+      <div id='main'>
+        {this.state.numNodes}
+    <Button variant='contained' type = "button" class="btn btn-light btn-lg"
+    onClick={() => this.addNote()}>
+      Add Note
+        </Button>
+      <Button type = "button" class="btn btn-light btn-lg" variant ='contained' onClick={() => this.addLink()}>
+        Add Link 
+      </Button>
+      <NodeComponentReal></NodeComponentReal>
         {this.state.elmts.map((value, index) => {
           return (<NodeComponentReal >
           </NodeComponentReal>);
