@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+  font: Sans-serif; /*To be decided later*/
+}
+
+h1 {
+  font-size: 50px;
+  color: #000;
+  padding: 40 40;
+}
+
+.notes {
+  height: max-content;
+  width: 30px;
+  background-color: aliceblue;
+  border-radius: 2px 2px 2px 2px;
+
+
+}
