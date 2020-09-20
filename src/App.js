@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Button } from '@material-ui/core';
 import ReactDOM from 'react-dom';
-import NodeComponentReal from './components/NodeComponentReal'
+import {NodeComponentReal} from './components/NodeComponentReal';
 //import LineTo from 'react-lineto';
 
 
@@ -13,7 +13,7 @@ class App extends React.Component {
     this.state = {numNodes: 0,
     elmts: [], 
     elmts2: [],
-    buttonVisibility: false,} // TODO: Change the value of buttonVisibility to false 
+    buttonVisibility: false,};
   }
 
   enterPressed(event) { // TODO: Fix the enterPressed function so that the main screen disappears and reveals the notes screen
@@ -25,12 +25,9 @@ class App extends React.Component {
     if(event.key === 'Enter'){
       console.log('enter press here! ');
       this.setState ({buttonVisibility: true});
+      var text = this.text;
     }
   }
-
-  
-
-  
 
   addNote() {
     this.setState({numNodes: this.state.numNodes + 1});
@@ -42,6 +39,8 @@ class App extends React.Component {
   addLine() {
     
   }
+
+  
   
   render(){
     if(this.state.buttonVisibility){
@@ -56,21 +55,10 @@ class App extends React.Component {
         Add Link 
       </Button>
       <NodeComponentReal></NodeComponentReal>
-      <div id='main'>
-        {this.state.numNodes}
-    <Button variant='contained' type = "button" class="btn btn-light btn-lg"
-    onClick={() => this.addNote()}>
-      Add Note
-        </Button>
-      <Button type = "button" class="btn btn-light btn-lg" variant ='contained' onClick={() => this.addLink()}>
-        Add Link 
-      </Button>
-      <NodeComponentReal></NodeComponentReal>
         {this.state.elmts.map((value, index) => {
           return (<NodeComponentReal >
           </NodeComponentReal>);
         })}
-      </div>
       </div>
     );}
     else { 
@@ -88,7 +76,8 @@ class App extends React.Component {
           <div> &nbsp;  </div>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Type in your notes here!" aria-label="Type in your notes here!" onKeyPress={this.enterPressed.bind(this)} aria-describedby="basic-addon2" /> 
+            <input type="text" class="form-control" placeholder="Type in your notes here!" aria-label="Type in your notes here!" onKeyPress={this.enterPressed.bind(this)} aria-describedby="basic-addon2" name = "text" ref={(c) => this.text = c} /> 
+            
             <div class="input-group-append"> </div>
           </div>
         </div>

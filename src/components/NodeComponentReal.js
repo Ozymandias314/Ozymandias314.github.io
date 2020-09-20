@@ -10,6 +10,9 @@ import { TrainRounded } from '@material-ui/icons';
 export default class NodeComponentReal extends React.Component {
    constructor(){
       super();
+      this.state = {
+        initialValue: null;
+      }
     }
 
     
